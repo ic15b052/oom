@@ -16,7 +16,7 @@ namespace lesson4
 
             // 2. ... with nicer formatting
             Console.WriteLine(JsonConvert.SerializeObject(book, Formatting.Indented));
-
+            
             // 3. serialize all items
             // ... include type, so we can deserialize sub-classes to interface type
             var settings = new JsonSerializerSettings() { Formatting = Formatting.Indented, TypeNameHandling = TypeNameHandling.Auto };
@@ -34,6 +34,7 @@ namespace lesson4
             var itemsFromFile = JsonConvert.DeserializeObject<IItem[]>(textFromFile, settings);
             var currency = Currency.EUR;
             foreach (var x in itemsFromFile) Console.WriteLine($"{x.Description.Truncate(50),-50} {x.Price.ConvertTo(currency).Amount,8:0.00} {currency}");
+            
         }
     }
 }
