@@ -16,6 +16,7 @@ namespace Task4
                 var x = new Planet(0, 0, null);
             });
         }
+
         [Test]
         public void wrongparameter2()
         {

@@ -13,15 +13,15 @@ namespace Task4
 
 
         [JsonConstructor]
-        public Planet(decimal newMass, decimal newDistance, string newName)
+        public Planet(decimal Mass, decimal Distance, string Name)
         {
-            if (newMass < 0) throw new ArgumentOutOfRangeException("Mass must not be negative.");
-            if (newDistance < 0) throw new ArgumentOutOfRangeException("Distance must not be negative.");
-            if (string.IsNullOrWhiteSpace(newName)) throw new ArgumentOutOfRangeException("Name must be given");
+            if (Mass < 0) throw new ArgumentOutOfRangeException("Mass must not be negative.");
+            if (Distance < 0) throw new ArgumentOutOfRangeException("Distance must not be negative.");
+            if (string.IsNullOrWhiteSpace(Name)) throw new ArgumentOutOfRangeException("Name must be given");
 
-            Name = newName;
-            Mass = newMass;
-            Distance_to_sun = newDistance;
+            this.Name = Name;
+            this.Mass = Mass;
+            Distance_to_sun = Distance;
             GenerateID();
 
         }

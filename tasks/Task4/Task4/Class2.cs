@@ -10,14 +10,14 @@ namespace Task4
         private string ID;
 
         [JsonConstructor]
-        public Sun(decimal newMass, string newName, Type classification)
+        public Sun(decimal Mass, string Name, Type Classification)
         {
-            if (newMass < 0) throw new ArgumentOutOfRangeException("Mass must not be negative.");
-            if (newName == null) throw new ArgumentOutOfRangeException("Name must be given");
+            if (Mass < 0) throw new ArgumentOutOfRangeException("Mass must not be negative.");
+            if (Name == null) throw new ArgumentOutOfRangeException("Name must be given");
 
-            Name = newName;
-            Mass = newMass;
-            Classification = classification;
+            this.Name = Name;
+            this.Mass = Mass;
+            this.Classification = Classification;
             GenerateID();
 
         }
